@@ -14,4 +14,24 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/Cloud01?useUnicode=true&characterEncoding=UTF-8&useSSL=true&serverTimezone=UTC
     username: root
-    password: admin
+    password: 123456
+
+# Eureka配置：配置服务注册中心地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka/
+  instance:
+    instance-id: springcloud-provider-dept-8001 #修改Eureka上的默认描述信息
+
+management:
+  endpoints:
+    web:
+      base-path: /application #此处名称可修改
+      exposure:
+        include: "*"
+        
+#info配置（点击状态信息会返回的东西，可以百度）
+info:
+  app.name: wulei-springcloud
+  company.name: blog.wulei2921625957.com

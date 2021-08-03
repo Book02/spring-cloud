@@ -5,7 +5,7 @@
 <mapper namespace="com.shu.springcloud.mapper.DeptMapper">
     <insert id="addDept" parameterType="Dept">
         insert into dept(deptName,deptSource)
-        values(#{deptName},#{deptSource});
+        values(#{deptName},DATABASE());
     </insert>
 
     <select id="queryById" resultType="Dept" parameterType="Long">
